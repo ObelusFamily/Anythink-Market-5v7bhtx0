@@ -20,7 +20,7 @@ const CommentInput = (props) => {
       agent.Comments.create(props.slug, {
         body: body,
       }).then((payload) => {
-        this.props.onSubmit(payload);
+        props.onSubmit(payload);
       });
       setBody("");
     };
