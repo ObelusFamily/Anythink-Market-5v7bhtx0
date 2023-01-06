@@ -17,7 +17,7 @@ const CommentInput = (props) => {
 
     const createComment = async (ev) => {
       ev.preventDefault();
-      agent.Comments.create(this.props.slug, {
+      agent.Comments.create(props.slug, {
         body: body,
       }).then((payload) => {
         this.props.onSubmit(payload);
