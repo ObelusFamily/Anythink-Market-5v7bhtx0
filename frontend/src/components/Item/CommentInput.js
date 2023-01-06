@@ -30,7 +30,7 @@ const CommentInput = (props) => {
         <textarea
           className="form-control"
           placeholder="Write a comment..."
-          value={state.body}
+          value={body}
           onChange={setBody}
           rows="3"
         ></textarea>
