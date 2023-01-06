@@ -17,7 +17,7 @@ const CommentInput = (props) => {
 
   const createComment = async (ev) => {
     ev.preventDefault();
-    agent.Comments.create(this.props.slug, body).then((payload) => {
+    agent.Comments.create(props.slug, body).then((payload) => {
       props.onSubmit(payload);
     });
     setBody("");
@@ -25,21 +25,21 @@ const CommentInput = (props) => {
 
 
   return (
-    <form className="card comment-form m-2" onSubmit={this.createComment}>
+    <form className="card comment-form m-2" onSubmit={createComment}>
       <div className="card-block">
         <textarea
           className="form-control"
           placeholder="Write a comment..."
-          value={this.state.body}
-          onChange={this.setBody}
+          value={state.body}
+          onChange={setBody}
           rows="3"
         ></textarea>
       </div>
       <div className="card-footer">
         <img
-          src={this.props.currentUser.image}
+          src={props.currentUser.image}
           className="user-pic mr-2"
-          alt={this.props.currentUser.username}
+          alt={props.currentUser.username}
         />
         <button className="btn btn-sm btn-primary" type="submit">
           Post Comment
