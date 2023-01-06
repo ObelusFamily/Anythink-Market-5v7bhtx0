@@ -186,10 +186,6 @@ router.put("/:item", auth.required, function(req, res, next) {
         req.item.image = req.body.item.image;
       }
 
-      if (typeof req.body.item.image == "undefined") {
-        req.item.image = "/workspaces/Anythink-Market-5v7bhtx0/frontend/public/placeholder.png";
-      }
-
       if (typeof req.body.item.tagList !== "undefined") {
         req.item.tagList = req.body.item.tagList;
       }

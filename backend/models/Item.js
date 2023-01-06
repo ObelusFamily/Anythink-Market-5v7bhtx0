@@ -45,6 +45,7 @@ ItemSchema.methods.updateFavoriteCount = function() {
 };
 
 ItemSchema.methods.toJSONFor = function(user) {
+  if (this.image == "") this.image = "/workspaces/Anythink-Market-5v7bhtx0/frontend/public/placeholder.png"
   return {
     slug: this.slug,
     title: this.title,
